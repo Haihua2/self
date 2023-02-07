@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;font-size:25px; }
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h2>天車相關物件出庫</h2>
+<h4>請輸入數量即可</h4>
+<input type="submit" style="font-size:25px" onclick="javascript:location.href='https://haihua2.github.io/self/DOOR'" value="回到首頁"　name="submit">
+
+<div class="container">
+  <form action="#" method="post" name="google">
+    <label for="fname">登記者姓名</label>
+    
+      <select id="name" name="登記者姓名">
+
+      <option style="font-size:25px;color:blue;" value="林信成">林信成</option>
+      <option style="font-size:25px;color:blue;" value="湯明仁">湯明仁</option>
+      <option style="font-size:25px;color:blue;" value="李冠潾">李冠潾</option>
+      <option style="font-size:25px;color:blue;" value="張家豪">張家豪</option>
+      <option style="font-size:25px;color:blue;" value="陳睿豪">陳睿豪</option>
+      <option style="font-size:25px;color:blue;" value="王再慶">王再慶</option>
+      <option style="font-size:25px;color:blue;" value="劉家宏">劉家宏</option>
+      
+      
+
+    </select>
+    <br>
+    <label for="bookdate">銅片：</label>
+    <input type="text" name="銅片">
+    <br>
+    <label for="bookdate">電軌：</label>
+    <input type="text" name="電軌">
+    <br>
+    <label for="bookdate">電軌彈簧支架：</label>
+    <input type="text" name="電軌彈簧支架">
+    <br>
+    <label for="bookdate">極限開關支架：</label>
+    <input type="text" name="極限開關支架">
+    <br>
+    
+        
+    
+        
+    </select>
+
+  
+
+    <input type="submit" style="font-size:25px"  value="更新庫存"　name="submit">
+  </form>
+</div>
+
+    <script type="text/javascript">
+        const scriptURL='https://script.google.com/macros/s/AKfycbz58p3UXPe6_UKysUCAc8qrJPdPPHFvb0-Zj2MhX5r2NPwCVzBCr3H76wtJrQTkRZTnmw/exec'
+                         
+        const form = document.forms['google']
+          
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("上傳成功"))
+              .catch(error => console.error('Error!', error.message))
+          })
+
+    </script>
+
+</body>
+</html>
