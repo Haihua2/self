@@ -60,9 +60,15 @@ input[type=submit]:hover {
         <option style="font-size:25px;color:blue;" value="劉家宏">劉家宏</option>
         <option style="font-size:25px;color:blue;" value="陳撼霄">陳撼霄</option>
         
+        
+
       
 
     </select>
+    <br>  
+    <label for="bookdate">選擇日期：</label>
+    <input type="datetime-local" id="bookdate" name="日期" placeholder="2014-09-18">
+  <br>
     <br>
     <label for="bookdate">美工刀：</label>
     <input type="text" name="美工刀">
@@ -140,14 +146,19 @@ input[type=submit]:hover {
                          
         const form = document.forms['google']
           
+        
           form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
               .then(response => alert("上傳成功"))
               .catch(error => console.error('Error!', error.message))
+
           })
 
+
+          
     </script>
+
 
 </body>
 </html>
